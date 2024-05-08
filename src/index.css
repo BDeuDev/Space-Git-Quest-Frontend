@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.glassmorphism-sm {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+.glassmorphism-xl-header {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #fFFFFF;
+  backdrop-filter: blur(10px);
+}
+.glassmorphism-xl-login {
+  backdrop-filter: blur(10px);
+  border: 2px solid #fFFFFF;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+.glassmorphism-xl-start {
+  border: #254488 solid 1px;
+  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.translate-0 {
+  transform: translateY(0);
+}
+.inner_text_shadow
+{
+    text-shadow: 3px 3px #000000, -3px -3px #000000;
+}
+
+.gradient {
+  background: linear-gradient(to top, #0a0818, #1d3a74, #254ea1,#1d3a74,#0a0818);
+  background-blend-mode: overlay;
+}
+
+
+.translate-208 {
+  transform: translateY(208px); /* Cambia el valor según la distancia deseada */
+}
+.translate-32 {
+  transform: translateY(32px); /* Cambia el valor según la distancia deseada */
+}
+.translate-80 {
+  transform: translateY(80px); /* Cambia el valor según la distancia deseada */
+}
+
+.transition-translate-20 {
+  transition: transform 20s linear; 
+} 
+.transition-translate-22 {
+  transition: transform 22s linear; 
+} 
+.transition-translate-50 {
+  transition: transform 50s linear; 
+} 
+html {
+  scroll-behavior: smooth; 
+}
+
+body {
+  scroll-behavior: smooth;
+  scroll-behavior: smooth 3s;
+  scrollbar-color: black;
+}
+.facts strong {
+  border: 1px solid white; /* Define un borde transparente por defecto */
+  transition: border 0.3s ease-in-out; /* Agrega una transición suave al borde */
+}
+
+.facts:hover strong {
+  border: 1px solid black; /* Cambia el borde al color negro al hacer hover */
+}

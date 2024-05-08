@@ -18,7 +18,7 @@ const Terminal: React.FC = () => {
     const ini = useSelector((state) => state.init);
     //@ts-ignore
     const stat = useSelector((state) => state.status);
-
+    const [current,setCurrent] = useState('')
     const [output, setOutput] = useState<OutputLine[]>([]);
     const [input, setInput] = useState<string>('');
     const [command, setCommand] = useState<string>('')
@@ -54,15 +54,18 @@ const Terminal: React.FC = () => {
         "git init": () => {
             dispatch(cd({ text: cds.cd, value: false }))
             dispatch(ls({ value: false }))
-            if(cds.cd){
+            setCurrent(cds.cd)
+            if(current === cds.cd){
+                return `Actualmente ya te encuentras en ${current}`
+            }else{
+                if(cds.cd ){
                 dispatch(init({ text: cds.cd, value: true }))
                 dispatch(status({ text: cds.cd, value: false }));
                 return `Viajando a ${cds.cd}`;
             }else{
                 return 'Seleccione un planeta primero [cd nombre]'
             }
-            
-            
+            }
             
         },
         "git status": () => {
@@ -72,7 +75,6 @@ const Terminal: React.FC = () => {
             return `Actualmente te encuentras en ${stat.status}`
         },
         "git add": () => "git add func",
-
         "git push": () => "Inicializando",
     };
 

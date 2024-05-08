@@ -15,7 +15,7 @@ const NpcChat = () => {
         
         if(called){
            const timer = setTimeout(() => {
-            setText("Nos encontramos en...");
+            setText("Nos encontramos en =>");
         }, 3000); // Cambiar después de 3 segundos
 
         return () => clearTimeout(timer); 

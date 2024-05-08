@@ -59,7 +59,7 @@ const Terminal: React.FC = () => {
                 dispatch(status({ text: cds.cd, value: false }));
                 return `Viajando a ${cds.cd}`;
             }else{
-                return 'Seleccione un planeta primero(cd [nombrePlaneta])'
+                return 'Seleccione un planeta primero [cd nombre]'
             }
             
             

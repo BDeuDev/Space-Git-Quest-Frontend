@@ -18,12 +18,12 @@ const Terminal: React.FC = () => {
     const ini = useSelector((state) => state.init);
     //@ts-ignore
     const stat = useSelector((state) => state.status);
-    const [current,setCurrent] = useState('')
+    const [current, setCurrent] = useState('');
     const [output, setOutput] = useState<OutputLine[]>([]);
     const [input, setInput] = useState<string>('');
-    const [command, setCommand] = useState<string>('')
+    const [command, setCommand] = useState<string>('');
     const consoleRef = useRef<HTMLDivElement>(null);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const commands: { [key: string]: (arg: string) => string } = {
         echo: (arg: string) => arg,
         greet: () => 'Hello, User!',
@@ -31,48 +31,48 @@ const Terminal: React.FC = () => {
         help: () => `Available commands: ${command}`,
         //@ts-ignore
         ls: () => {
-            dispatch(init({ value: false }))
-            dispatch(cd({ text: '', value: false }))
-            dispatch(ls({ value: true }))
-            return "<== Planetas Disponibles"
+            dispatch(init({ value: false }));
+            dispatch(cd({ text: '', value: false }));
+            dispatch(ls({ value: true }));
+            return "<== Planetas Disponibles";
         },
         //@ts-ignore
         cd: (arg: string) => {
-            dispatch(init({ value: false }))
-            dispatch(ls({ value: false }))
+            dispatch(init({ value: false }));
+            dispatch(ls({ value: false }));
             if (arg) {
                 if (planets.includes(arg)) {
                     dispatch(cd({ text: arg, value: true }));
                     return arg
                 } else {
-                    dispatch(cd({ text: arg, value: false }))
+                    dispatch(cd({ text: arg, value: false }));
                 }
             } else {
-                dispatch(cd({ text: arg, value: false }))
+                dispatch(cd({ text: arg, value: false }));
             }
         },
         "git init": () => {
-            dispatch(cd({ text: cds.cd, value: false }))
-            dispatch(ls({ value: false }))
-            setCurrent(cds.cd)
-            if(current === cds.cd && cds.cd){
-                return `Actualmente ya te encuentras en ${current}`
-            }else{
-                if(cds.cd ){
-                dispatch(init({ text: cds.cd, value: true }))
-                dispatch(status({ text: cds.cd, value: false }));
-                return `Viajando a ${cds.cd}`;
-            }else{
-                return 'Seleccione un planeta primero [cd nombre]'
+            dispatch(cd({ text: cds.cd, value: false }));
+            dispatch(ls({ value: false }));
+            setCurrent(cds.cd);
+            if (current === cds.cd && cds.cd) {
+                return `Actualmente ya te encuentras en ${current}`;
+            } else {
+                if (cds.cd) {
+                    dispatch(init({ text: cds.cd, value: true }));
+                    dispatch(status({ text: cds.cd, value: false }));
+                    return `Viajando a ${cds.cd}`;
+                } else {
+                    return 'Seleccione un planeta primero [cd nombre]';
+                }
             }
-            }
-            
+
         },
         "git status": () => {
-            dispatch(ls({ value: false }))
-            dispatch(init({ text: cds.cd, value: false }))
-            dispatch(cd({ text: cds.cd, value: false }))
-            return `Actualmente te encuentras en ${stat.status}`
+            dispatch(ls({ value: false }));
+            dispatch(init({ text: cds.cd, value: false }));
+            dispatch(cd({ text: cds.cd, value: false }));
+            return `Actualmente te encuentras en ${stat.status}`;
         },
         "git add": () => "git add func",
         "git push": () => "Inicializando",
@@ -88,13 +88,13 @@ const Terminal: React.FC = () => {
     const handleCommand = (command: string): void => {
         let param: string;
         if (command[0].startsWith('g')) {
-            param = '|'
+            param = '|';
         } else {
-            param = ' '
+            param = ' ';
         }
-        const [cmd, ...args] = command.split(param); // Use '|' as separator instead of ' '
+        const [cmd, ...args] = command.split(param); 
         if (commands[cmd]) {
-            const result = commands[cmd](args.join(param)); // Join args into a single string
+            const result = commands[cmd](args.join(param)); 
             setOutput((prevOutput) => [
                 ...prevOutput,
                 { type: 'command', text: `$ ${command}` },
@@ -111,7 +111,7 @@ const Terminal: React.FC = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
         if (input.trim() === 'clear') {
-            setOutput([]); // Clear output if input is 'clear'
+            setOutput([]); 
         } else {
             handleCommand(input);
         }
@@ -120,8 +120,7 @@ const Terminal: React.FC = () => {
 
     return (
 
-        <div className='fixed bottom-[1%] left-[60%] font-orbitron p-2 bg-slate-950 right-[3%] z-50 shadow-2xl' >{/* h-[200px] */}
-
+        <div className='fixed bottom-[1%] left-[60%] font-orbitron p-2 bg-slate-950 right-[3%] z-50 shadow-2xl' >
             <div className='absolute bottom-0 left-0 w-full h-auto min-h-32 max-h-32 overflow-y-scroll mb-10 p-4 bg-slate-950 text-white' ref={consoleRef}>
                 {output.map((line, index) => (
                     <div key={index} className={`${line.type}fixed bottom-[50%] text-green-800 font-semibold text-lg`}>
@@ -130,7 +129,7 @@ const Terminal: React.FC = () => {
                 ))}
             </div>
 
-            <form onSubmit={handleSubmit} className='flex flex-row items-center justify-center'>{/* absolute bottom-0 */}
+            <form onSubmit={handleSubmit} className='flex flex-row items-center justify-center'>
                 <span className='text-yellow-400 block text-center justify-center'>$-</span>
                 <input className='w-full  bg-slate-950 outline-none text-yellow-400'
                     type="text"
@@ -139,11 +138,7 @@ const Terminal: React.FC = () => {
                     autoFocus
                 />
             </form>
-
-
         </div>
-
-
     );
 };
 

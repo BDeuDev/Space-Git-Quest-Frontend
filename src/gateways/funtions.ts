@@ -1,10 +1,14 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { init } from "../redux/initSlice";
 const FunctionGenerator = () => {
     const navigate = useNavigate();
-    const saludar = () => {
+    const dispatch = useDispatch()
+    const profileLink = () => {
+        dispatch(init({value:false,text:''}))
         return navigate('/profile')
     }
-    const saludar2 = () => {
+    const gameLink = () => {
         return navigate('/game')
     }
     const logout = () => {
@@ -12,8 +16,8 @@ const FunctionGenerator = () => {
         return navigate('/exit')
     }
     const functions = [
-        saludar,
-        saludar2,
+        profileLink,
+        gameLink,
         logout
 
     ]

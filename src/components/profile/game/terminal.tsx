@@ -55,7 +55,7 @@ const Terminal: React.FC = () => {
             dispatch(cd({ text: cds.cd, value: false }))
             dispatch(ls({ value: false }))
             setCurrent(cds.cd)
-            if(current === cds.cd){
+            if(current === cds.cd && cds.cd){
                 return `Actualmente ya te encuentras en ${current}`
             }else{
                 if(cds.cd ){

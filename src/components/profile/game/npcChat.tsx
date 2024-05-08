@@ -12,16 +12,18 @@ const NpcChat = () => {
     const { call } = useSelector((state) => state.ls)
     const [text,setText] = useState(`Viajando a ${init}...`)
     useEffect(() => {
-        setText(`Viajando a ${init}...`)
+        
         if(called){
            const timer = setTimeout(() => {
             setText("Nos encontramos en...");
         }, 3000); // Cambiar después de 3 segundos
 
         return () => clearTimeout(timer); 
+        }else{
+            setText(`Viajando a ${init}...`)
         }
         
-    }, []);
+    }, [called]);
     return (
         <div className="fixed bottom-[1%] right-[40%] w-auto h-auto left-[35%] shadow-2xl z-50 flex flex-col items-center justify-center">
             <div className="flex flex-row items-center justify-center absolute">

@@ -30,42 +30,49 @@ const Terminal: React.FC = () => {
         clear: () => '',
         help: () => `Available commands: ${command}`,
         //@ts-ignore
-        ls: () => { 
-            dispatch(init({value:false}))
-            dispatch(cd({text:'',value:false}))
-            dispatch(ls({value:true}))
+        ls: () => {
+            dispatch(init({ value: false }))
+            dispatch(cd({ text: '', value: false }))
+            dispatch(ls({ value: true }))
             return "<== Planetas Disponibles"
         },
         //@ts-ignore
-        cd:(arg:string) => {
-            dispatch(init({value:false}))
-            dispatch(ls({value:false}))
-            if(arg){
-                if(planets.includes(arg)){
-                    dispatch(cd({ text: arg , value:true}));
-                    return arg 
-                }else{
-                    dispatch(cd({text:arg,value:false}))
+        cd: (arg: string) => {
+            dispatch(init({ value: false }))
+            dispatch(ls({ value: false }))
+            if (arg) {
+                if (planets.includes(arg)) {
+                    dispatch(cd({ text: arg, value: true }));
+                    return arg
+                } else {
+                    dispatch(cd({ text: arg, value: false }))
                 }
-            }else{
-                dispatch(cd({text:arg,value:false}))
+            } else {
+                dispatch(cd({ text: arg, value: false }))
             }
-            },
+        },
         "git init": () => {
-            dispatch(cd({text:cds.cd,value:false}))
-            dispatch(ls({value:false}))
-            dispatch(init({text:cds.cd,value:true}))
-            dispatch(status({text:cds.cd,value:false}));
-            return `Viajando a ${cds.cd}`;
+            dispatch(cd({ text: cds.cd, value: false }))
+            dispatch(ls({ value: false }))
+            if(cds.cd){
+                dispatch(init({ text: cds.cd, value: true }))
+                dispatch(status({ text: cds.cd, value: false }));
+                return `Viajando a ${cds.cd}`;
+            }else{
+                return 'Seleccione un planeta primero(cd [nombrePlaneta])'
+            }
+            
+            
+            
         },
         "git status": () => {
-            dispatch(ls({value:false}))
-            dispatch(init({text:cds.cd,value:false}))
-            dispatch(cd({text:cds.cd,value:false}))
+            dispatch(ls({ value: false }))
+            dispatch(init({ text: cds.cd, value: false }))
+            dispatch(cd({ text: cds.cd, value: false }))
             return `Actualmente te encuentras en ${stat.status}`
         },
         "git add": () => "git add func",
-        
+
         "git push": () => "Inicializando",
     };
 
@@ -77,14 +84,14 @@ const Terminal: React.FC = () => {
     })
 
     const handleCommand = (command: string): void => {
-        let param:string;
-        if(command[0].startsWith('g')){
+        let param: string;
+        if (command[0].startsWith('g')) {
             param = '|'
-        }else{
+        } else {
             param = ' '
         }
         const [cmd, ...args] = command.split(param); // Use '|' as separator instead of ' '
-            if (commands[cmd]) {
+        if (commands[cmd]) {
             const result = commands[cmd](args.join(param)); // Join args into a single string
             setOutput((prevOutput) => [
                 ...prevOutput,

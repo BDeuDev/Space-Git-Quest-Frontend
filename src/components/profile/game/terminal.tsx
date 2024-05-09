@@ -34,7 +34,7 @@ const Terminal: React.FC = () => {
             dispatch(init({ value: false }));
             dispatch(cd({ text: '', value: false }));
             dispatch(ls({ value: true }));
-            return "<== Planetas Disponibles";
+            return "<== Available Planets";
         },
         //@ts-ignore
         cd: (arg: string) => {
@@ -56,14 +56,14 @@ const Terminal: React.FC = () => {
             dispatch(ls({ value: false }));
             setCurrent(cds.cd);
             if (current === cds.cd && cds.cd) {
-                return `Actualmente ya te encuentras en ${current}`;
+                return `Currently, you are in ${current}`;
             } else {
                 if (cds.cd) {
                     dispatch(init({ text: cds.cd, value: true }));
                     dispatch(status({ text: cds.cd, value: false }));
-                    return `Viajando a ${cds.cd}`;
+                    return `Traveling to ${cds.cd}`;
                 } else {
-                    return 'Seleccione un planeta primero [cd nombre]';
+                    return 'Select a planet first [cd name]';
                 }
             }
 
@@ -73,7 +73,7 @@ const Terminal: React.FC = () => {
             dispatch(init({ text: cds.cd, value: false }));
             dispatch(cd({ text: cds.cd, value: false }));
             dispatch(status({ text: cds.cd, value: true }));
-            return `Actualmente te encuentras en ${stat.status}`;
+            return `Currently, you are in ${stat.status}`;
         },
         "git add": () => "git add func",
         "git push": () => "Inicializando",

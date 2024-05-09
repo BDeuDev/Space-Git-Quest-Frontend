@@ -2,8 +2,8 @@ import {faHome,faRegistered,faQuestion,faUser,faSignOutAlt, faRocket} from '@for
 
 export const icons = [
     faHome,
-    faRegistered,
-    faQuestion
+    faQuestion,
+    faRegistered
     
 ]
 export const optionsIcons = [
@@ -13,6 +13,6 @@ export const optionsIcons = [
 ]
 export const texts = [
     'Home',
-    'Overview',
-    'Why learn'
+    'Why learn',
+    'Info'
 ]

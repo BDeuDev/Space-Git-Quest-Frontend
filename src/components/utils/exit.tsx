@@ -17,7 +17,7 @@ const Exit = () => {
         navigate('/')
       }
     return (
-       <LoadingScreen content="Cerrando Sesión..." rendered={true}/>
+       <LoadingScreen content="Logging out..." rendered={true}/>
     )
 }
 export default Exit;

@@ -41,7 +41,7 @@ const AuthCallback = () =>{
         }
       },[])
     return (
-         <LoadingScreen content="Cargando..." rendered={true}/>
+         <LoadingScreen content="Loading..." rendered={true}/>
     )   
 }
 export default AuthCallback;

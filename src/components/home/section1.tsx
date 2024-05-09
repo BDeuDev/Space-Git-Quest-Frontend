@@ -8,7 +8,7 @@ const Section1:React.FC<Section1Props> = ({text}) => {
 
     return (
         <div className="w-full h-screen  bg-gradient-to-r from-blue-900 to-blue-700 p-8  shadow-lg flex flex-col justify-center items-center text-left">
-           <h2 className="text-3xl font-bold mb-8 text-white">Por qué aprender comandos de Git?</h2>
+           <h2 className="text-3xl font-bold mb-8 text-white">Why learn Git commands?</h2>
             <div className="w-5/6">
             <ul className="list-disc list-inside mx-auto">
             {text.map((point: HighlightedPoint, index: number) => (

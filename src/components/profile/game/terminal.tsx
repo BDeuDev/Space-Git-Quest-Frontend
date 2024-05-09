@@ -60,7 +60,7 @@ const Terminal: React.FC = () => {
             } else {
                 if (cds.cd) {
                     dispatch(init({ text: cds.cd, value: true }));
-                    dispatch(status({ text: cds.cd, value: true }));
+                    dispatch(status({ text: cds.cd, value: false }));
                     return `Viajando a ${cds.cd}`;
                 } else {
                     return 'Seleccione un planeta primero [cd nombre]';
@@ -72,6 +72,7 @@ const Terminal: React.FC = () => {
             dispatch(ls({ value: false }));
             dispatch(init({ text: cds.cd, value: false }));
             dispatch(cd({ text: cds.cd, value: false }));
+            dispatch(status({ text: cds.cd, value: true }));
             return `Actualmente te encuentras en ${stat.status}`;
         },
         "git add": () => "git add func",

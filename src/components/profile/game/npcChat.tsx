@@ -32,7 +32,7 @@ const NpcChat = () => {
             <div className="flex flex-row items-center justify-center absolute">
                 {status.called && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Current location {'-->'}{status.status}</h1>
                     <Planet name={cd} /></>}
-                {active && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Travel to {cd}?</h1>
+                {active && cd && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Travel to {cd}?</h1>
                     <Planet name={cd} /></>}
                 {active && !cd && <h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Invalid planet name, if u forgot the planets's names do ls on the terminal</h1>}
                 {called && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">{text}</h1>

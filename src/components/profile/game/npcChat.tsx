@@ -18,7 +18,7 @@ const NpcChat = () => {
         
         if(called){
            const timer = setTimeout(() => {
-            setText("We are currently in -->");
+            setText("Select a new planet to travel");
         }, 3000); 
 
         return () => clearTimeout(timer); 
@@ -36,8 +36,7 @@ const NpcChat = () => {
                     <Planet name={cd} /></>}
                 {active && !cd && <h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Planet name can't me empty</h1>}
                 {active && !planets.includes(cd)&& <h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">{cd} doesn't exists</h1>}
-                {called && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">{text}</h1>
-                    <Planet name={cd} /></>}
+                {called && <h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">{text}</h1>}
                 {call && <div className="flex flex-col items-center justify-center w-full h-full">
                     {planets.map((text, index) => (
                         <div className="flex flex-row items-center justify-center" key={index + 1}>

@@ -23,7 +23,7 @@ const NpcChat = () => {
 
         return () => clearTimeout(timer); 
         }else{
-            setText(`Traveling to ${init}...`)
+            setText(`Traveling to ${cd}...`)
         }
         
     }, [called]);
@@ -32,7 +32,7 @@ const NpcChat = () => {
             <div className="flex flex-row items-center justify-center absolute">
                 {status.called && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Current location {'-->'}{status.status}</h1>
                     <Planet name={cd} /></>}
-                {active && planets.includes(cd) && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Travel to {init}?</h1>
+                {active && planets.includes(cd) && <><h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Travel to {cd}?</h1>
                     <Planet name={cd} /></>}
                 {active && !cd && <h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">Planet name can't me empty</h1>}
                 {active && !planets.includes(cd)&& <h1 className="z-50  font-semibold text-green-600 inner_text_shadow mr-2">{cd} doesn't exists</h1>}

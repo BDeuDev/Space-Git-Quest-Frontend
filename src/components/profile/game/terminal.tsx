@@ -46,7 +46,7 @@ const Terminal: React.FC = () => {
                     dispatch(cd({ text: arg, value: true }));
                     return arg
                 } else {
-                    dispatch(cd({ text: arg, value: false }));
+                    dispatch(cd({ text: arg, value: true }));
                 }
             } else {
                 dispatch(cd({ text: arg, value: true }));

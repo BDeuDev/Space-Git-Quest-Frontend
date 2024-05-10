@@ -23,7 +23,7 @@ const NpcChat = () => {
 
         return () => clearTimeout(timer); 
         }else{
-            setText(`Traveling to ${init}...`)
+            setText(`Traveling to ${cd}...`)
         }
         
     }, [called]);

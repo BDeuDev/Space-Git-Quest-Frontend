@@ -32,6 +32,7 @@ const Terminal: React.FC = () => {
         help: () => `Available commands: ${command}`,
         //@ts-ignore
         ls: () => {
+            dispatch(push({value:false}));
             dispatch(init({ value: false }));
             dispatch(cd({ text: '', value: false }));
             dispatch(ls({ value: true }));
@@ -39,6 +40,7 @@ const Terminal: React.FC = () => {
         },
         //@ts-ignore
         cd: (arg: string) => {
+            dispatch(push({value:false}));
             dispatch(status({ text: cds.cd, value: false }));
             dispatch(init({ value: false }));
             dispatch(ls({ value: false }));
@@ -54,6 +56,7 @@ const Terminal: React.FC = () => {
             }
         },
         "git init": () => {
+            dispatch(push({value:false}));
             dispatch(cd({ text: cds.cd, value: false }));
             dispatch(ls({ value: false }));
             setCurrent(cds.cd);
@@ -71,6 +74,7 @@ const Terminal: React.FC = () => {
 
         },
         "git status": () => {
+            dispatch(push({value:false}));
             dispatch(ls({ value: false }));
             dispatch(init({ text: cds.cd, value: false }));
             dispatch(cd({ text: cds.cd, value: false }));

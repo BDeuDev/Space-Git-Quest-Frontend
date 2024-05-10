@@ -59,7 +59,7 @@ const Terminal: React.FC = () => {
             if (current === cds.cd && cds.cd) {
                 return `Currently, you are in ${current}`;
             } else {
-                if (cds.cd) {
+                if (planets.includes(cds.cd)) {
                     dispatch(init({ text: cds.cd, value: true }));
                     dispatch(status({ text: cds.cd, value: false }));
                     return `Traveling to ${cds.cd}`;

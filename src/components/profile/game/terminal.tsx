@@ -38,6 +38,7 @@ const Terminal: React.FC = () => {
         },
         //@ts-ignore
         cd: (arg: string) => {
+            dispatch(status({ text: cds.cd, value: false }));
             dispatch(init({ value: false }));
             dispatch(ls({ value: false }));
             if (arg) {

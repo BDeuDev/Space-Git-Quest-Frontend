@@ -79,7 +79,7 @@ const Terminal: React.FC = () => {
         },
         "git add": () => "git add func",
         "git push": () => {
-            dispatch(init({ value: false }));
+            dispatch(init({ text:'',value: false }));
             dispatch(cd({ text: '', value: false }));
             dispatch(ls({ value: true }));
             dispatch(status({ text: '', value: false}));

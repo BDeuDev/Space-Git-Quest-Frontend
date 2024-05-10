@@ -49,7 +49,7 @@ const Terminal: React.FC = () => {
                     dispatch(cd({ text: arg, value: false }));
                 }
             } else {
-                dispatch(cd({ text: arg, value: false }));
+                dispatch(cd({ text: arg, value: true }));
             }
         },
         "git init": () => {

@@ -13,7 +13,7 @@ const NpcChat = () => {
     //@ts-ignore
     const status = useSelector((state)=>state.status)
 
-    const [text,setText] = useState(`Traveling to ${init}...`)
+    const [text,setText] = useState(`Traveling to ${cd}...`)
     useEffect(() => {
         
         if(called){

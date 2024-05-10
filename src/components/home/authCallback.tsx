@@ -30,7 +30,7 @@ const AuthCallback = () =>{
                             dispatch(login({username:username,avatar:avatar}));
                             navigate('/profile');
                         }else{
-                            console.error('No se proporciono un token');
+                            console.error('Token not found');
                         }
                     }
                 } catch (error) {

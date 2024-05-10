@@ -35,7 +35,7 @@ const Terminal: React.FC = () => {
             dispatch(status({ text: '', value: false}));
             dispatch(push({value:false}));
             dispatch(init({ value: false }));
-            dispatch(cd({ text: '', value: false }));
+            dispatch(cd({ text: cds.cd, value: false }));
             dispatch(ls({ value: true }));
             return "<== Available Planets";
         },

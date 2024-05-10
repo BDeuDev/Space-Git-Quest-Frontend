@@ -1,9 +1,9 @@
-import {faHome,faQuestion,faUser,faSignOutAlt, faRocket, faInfo} from '@fortawesome/free-solid-svg-icons';
+import {faHome,faQuestion,faUser,faSignOutAlt, faRocket, faInfo, faQuestionCircle, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 
 export const icons = [
     faHome,
-    faQuestion,
-    faInfo
+    faQuestionCircle,
+    faInfoCircle
     
 ]
 export const optionsIcons = [

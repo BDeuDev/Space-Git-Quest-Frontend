@@ -77,7 +77,13 @@ const Terminal: React.FC = () => {
             return `Currently, you are in ${stat.status}`;
         },
         "git add": () => "git add func",
-        "git push": () => "Inicializando",
+        "git push": () => {
+            dispatch(init({ value: false }));
+            dispatch(cd({ text: '', value: false }));
+            dispatch(ls({ value: true }));
+            dispatch(status({ text: '', value: false}));
+            return "Journey end."
+        },
     };
 
     useEffect(() => {

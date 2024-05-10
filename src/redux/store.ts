@@ -4,6 +4,7 @@ import cdSlice from './cdSlice';
 import lsSlice from './lsSlice';
 import initSlice from './initSlice';
 import statusSlice from './statusSlice';
+import pushSlice from './pushSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,8 @@ const store = configureStore({
     ls:lsSlice,
     init:initSlice,
     status:statusSlice,
+    push:pushSlice,
+    
     
     
   },

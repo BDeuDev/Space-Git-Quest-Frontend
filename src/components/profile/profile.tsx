@@ -10,17 +10,19 @@ interface IProfile extends Omit<RouteProps, 'component'> {
 const Profile:React.FC<IProfile> = ({component: Component}) => {
   //@ts-ignore
   const {init,called} = useSelector((state) => state.init);
+  //@ts-ignore
+  const {call} = useSelector((state) => state.push);
   const [image,setImage] = useState('bg-default.png')
 
   useEffect(() => {
-    if(called){
+    if(called || call){
       setImage("light.gif")
     const timeoutId = setTimeout(() => {
-      if(init){
+      if(called){
         setImage(init+".png")
+      }else{
+        setImage('bg-default.png')
       }
-        
-      
         
     }, 3000); 
 
@@ -28,7 +30,7 @@ const Profile:React.FC<IProfile> = ({component: Component}) => {
     return () => clearTimeout(timeoutId);
     }
     
-},[init]);
+},[init,call]);
     return (
        <div className=" w-full h-screen">
             <Menu/>

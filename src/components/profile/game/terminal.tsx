@@ -5,6 +5,7 @@ import { planets } from '../../../gateways/planets';
 import { ls } from '../../../redux/lsSlice';
 import { init } from '../../../redux/initSlice';
 import { status } from '../../../redux/statusSlice';
+import { push } from '../../../redux/pushSlice';
 
 interface OutputLine {
     type: 'command' | 'output' | 'error';
@@ -82,6 +83,7 @@ const Terminal: React.FC = () => {
             dispatch(cd({ text: '', value: false }));
             dispatch(ls({ value: true }));
             dispatch(status({ text: '', value: false}));
+            dispatch(push({value:true}));
             return "Journey end."
         },
     };

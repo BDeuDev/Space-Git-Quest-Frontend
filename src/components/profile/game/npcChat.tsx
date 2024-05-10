@@ -18,7 +18,7 @@ const NpcChat = () => {
         
         if(called){
            const timer = setTimeout(() => {
-            setText("Select a new planet to travel");
+            setText("Select a new planet to travel [cd]");
         }, 3000); 
 
         return () => clearTimeout(timer); 

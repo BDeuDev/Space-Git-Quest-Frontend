@@ -32,6 +32,7 @@ const Terminal: React.FC = () => {
         help: () => `Available commands: ${command}`,
         //@ts-ignore
         ls: () => {
+            dispatch(status({ text: '', value: false}));
             dispatch(push({value:false}));
             dispatch(init({ value: false }));
             dispatch(cd({ text: '', value: false }));

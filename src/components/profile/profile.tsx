@@ -16,8 +16,10 @@ const Profile:React.FC<IProfile> = ({component: Component}) => {
     if(called){
       setImage("light.gif")
     const timeoutId = setTimeout(() => {
-      if(init)
+      if(init){
         setImage(init+".png")
+      }
+        
       
         
     }, 3000); 

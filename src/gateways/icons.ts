@@ -1,15 +1,15 @@
-import {faHome,faRegistered,faQuestion,faUser, faRocket, faInfo} from '@fortawesome/free-solid-svg-icons';
+import {faHome,faRegistered,faQuestion,faUser,faSignOutAlt, faRocket, faInfo} from '@fortawesome/free-solid-svg-icons';
 
 export const icons = [
     faHome,
     faQuestion,
-    faRegistered
+    faInfo
     
 ]
 export const optionsIcons = [
     faUser,
     faRocket,
-    faInfo
+    faSignOutAlt
 ]
 export const texts = [
     'Home',

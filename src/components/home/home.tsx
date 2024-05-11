@@ -8,6 +8,7 @@ import { githubFacts } from '../../gateways/githubFacts';
 import Section1 from './section1';
 import Section2 from './section2';
 import Section0 from './section0';
+import Footer from '../footer/footer';
 
 
 const Home = () => {
@@ -68,6 +69,7 @@ const Home = () => {
             <section ref={sections[2]} className="h-full w-full flex flex-col justify-center items-center">
                 <Section2 text={githubFacts}/>
             </section>
+            <Footer/>
         </main>
     );
 }

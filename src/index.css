@@ -41,6 +41,10 @@
   background: linear-gradient(to top, #0a0818, #1d3a74, #254ea1,#1d3a74,#0a0818);
   background-blend-mode: overlay;
 }
+.gradient2{
+  background: linear-gradient(to right, #ffffff 0%,#7c7373 30%,#1b1c1f 100%);
+  background-blend-mode: overlay;
+}
 
 
 .translate-208 {

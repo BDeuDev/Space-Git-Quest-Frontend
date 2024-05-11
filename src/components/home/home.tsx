@@ -69,7 +69,7 @@ const Home = () => {
             <section ref={sections[2]} className="h-full w-full flex flex-col justify-center items-center">
                 <Section2 text={githubFacts}/>
             </section>
-            <Footer/>
+            {/* <Footer/> */}
         </main>
     );
 }
